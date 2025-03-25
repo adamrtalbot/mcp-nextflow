@@ -96,9 +96,3 @@ Once installed, you can access the MCP in the Claude Desktop app:
    ```
    Using the Nextflow Developer Tools, run the integration tests for the nf-amazon plugin
    ```
-
-## Available Tools
-
-Here are some of the main tools available in this MCP:
-
-### Development Directory Management
