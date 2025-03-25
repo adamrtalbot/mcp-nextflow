@@ -2,6 +2,9 @@
 
 A Model Context Protocol (MCP) server designed for Nextflow development and testing, built with FastMCP.
 
+> [!WARNING]
+> This MCP is designed for developing Nextflow itself, not for writing Nextflow pipelines.
+
 ## Overview
 
 This MCP provides a suite of tools for Nextflow development, including:
