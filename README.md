@@ -20,7 +20,7 @@ This MCP provides a suite of tools for Nextflow development, including:
 - Python 3.8+ with pip
 - Git repository of Nextflow (cloned locally)
 
-### Installing with FastMCP
+### Installing with FastMCP to use in Claude Desktop
 
 1. Install the FastMCP CLI tool:
 
@@ -42,6 +42,30 @@ fastmcp install mcp-nextflow.py
 ```
 
 This will make the MCP available in the Claude Desktop app.
+
+### Installing with FastMCP to use in Cursor
+
+1. Fetch the virtual environment path which includes the FastMCP CLI tool. If you are using `uv` this will be in the `.venv` directory.
+1. Get the directory of your Nextflow cloned repository.
+1. Add the following json to the cursor MCP servers:
+
+```json
+{
+    "mcpServers": {
+        "server-name": {
+            "command": "/path/to/your/.venv/bin/python",
+            "args": [
+                "/path/to/your/mcp-nextflow/mcp-nextflow.py"
+            ],
+            "env": {
+                "NEXTFLOW_DIR": "/path/to/your/nextflow"
+            }
+        }
+    }
+}
+```
+
+Then, you should be able to use the MCP in Cursor. In Agentic mode, ask the agent to "test the nf-amazon plugin" and it should run `make test module=plugins:nf-amazon`.
 
 ### Setting Environment Variables
 
